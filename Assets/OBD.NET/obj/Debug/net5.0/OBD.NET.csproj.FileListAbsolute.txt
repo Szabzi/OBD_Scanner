@@ -1,0 +1,14 @@
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net5.0\OBD.NET.deps.json
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net5.0\OBD.NET.dll
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net5.0\OBD.NET.pdb
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net5.0\OBD.NET.xml
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.csproj.AssemblyReference.cache
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.AssemblyInfoInputs.cache
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.AssemblyInfo.cs
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.csproj.CoreCompileInputs.cache
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.dll
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\refint\OBD.NET.dll
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.xml
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\OBD.NET.pdb
+C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\OBD.NET\obj\Debug\net5.0\ref\OBD.NET.dll

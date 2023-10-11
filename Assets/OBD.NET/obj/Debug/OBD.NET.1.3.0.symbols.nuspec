@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>OBD.NET</id>
+    <version>1.3.0</version>
+    <authors>Darth Affe / Roman Lumetsberger</authors>
+    <license type="expression">GPL-2.0-only</license>
+    <licenseUrl>https://licenses.nuget.org/GPL-2.0-only</licenseUrl>
+    <projectUrl>https://github.com/DarthAffe/OBD.NET</projectUrl>
+    <description>C#-Library to read/write data from/to a car through an ELM327-/STN1170-Adapter</description>
+    <repository type="Github" url="https://github.com/DarthAffe/OBD.NET" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+      <group targetFramework="net5.0">
+        <dependency id="System.IO.Ports" version="5.0.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="System.IO.Ports" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net4.8\OBD.NET.pdb" target="lib\net48\OBD.NET.pdb" />
+    <file src="C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net5.0\OBD.NET.pdb" target="lib\net5.0\OBD.NET.pdb" />
+    <file src="C:\Users\Szabolcs\Downloads\OBD.NET-master\OBD.NET-master\OBD.NET\bin\net6.0\OBD.NET.pdb" target="lib\net6.0\OBD.NET.pdb" />
+  </files>
+</package>
