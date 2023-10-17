@@ -28,7 +28,7 @@ public abstract class SerialDevice : IDisposable
     public int QueueSize => _queueSize;
 
     protected QueuedCommand? CurrentCommand;
-    protected Logger? Logger { get; }
+    protected MyLogger? Logger { get; }
     protected ISerialConnection Connection { get; }
     protected char Terminator { get; set; }
 
@@ -42,7 +42,7 @@ public abstract class SerialDevice : IDisposable
     /// <param name="connection">connection.</param>
     /// <param name="terminator">terminator used for terminating the command message</param>
     /// <param name="logger">logger instance</param>
-    protected SerialDevice(ISerialConnection connection, char terminator = '\r', Logger? logger = null)
+    protected SerialDevice(ISerialConnection connection, char terminator = '\r', MyLogger? logger = null)
     {
         this.Connection = connection;
         this.Terminator = terminator;

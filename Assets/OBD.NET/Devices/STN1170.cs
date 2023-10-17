@@ -8,7 +8,7 @@ public class STN1170 : ELM327 // Fully compatible device
 {
     #region Constructors
 
-    public STN1170(ISerialConnection connection, Logger? logger = null)
+    public STN1170(ISerialConnection connection, MyLogger? logger = null)
         : base(connection, logger)
     { }
 

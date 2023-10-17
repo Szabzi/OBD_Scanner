@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2049122212}
         m_TargetAssemblyTypeName: ScannerScript, Assembly-CSharp
-        m_MethodName: ConnectToScanner
+        m_MethodName: ConnectIfPermitted
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1099,15 +1099,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68
-  m_fontSizeBase: 68
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43ac6eceb664a34bac46ae3d8da0a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comPort: 
+  comPort: COM3
   comPortIF: {fileID: 1051794574}
 --- !u!4 &2049122213
 Transform:

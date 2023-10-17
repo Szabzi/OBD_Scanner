@@ -39,7 +39,7 @@ public class ELM327 : SerialDevice
 
     #region Constructors
 
-    public ELM327(ISerialConnection connection, Logger? logger = null)
+    public ELM327(ISerialConnection connection, MyLogger? logger = null)
         : base(connection, logger: logger)
     { }
 

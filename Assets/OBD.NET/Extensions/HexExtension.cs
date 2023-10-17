@@ -16,7 +16,7 @@ public static class HexExtension
     //     return hex.Aggregate(0, (current, c) => (current << 4) + (GetHexVal(c)));
     // }
 
-    public static string ToHexString(this byte b) => ToHexString(new[] { b });
+    //public static string ToHexString(this byte b) => ToHexString(new[] { b });
     public static string ToHexString(this byte[] bytes) => BitConverter.ToString(bytes).Replace("-", string.Empty);
 
     #endregion

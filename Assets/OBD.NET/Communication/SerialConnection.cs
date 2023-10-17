@@ -48,7 +48,9 @@ public class SerialConnection : ISerialConnection
 
     public static IEnumerable<string> GetAvailablePorts() => SerialPort.GetPortNames();
 
-    public void Connect() => _serialPort.Open();
+    public void Connect(){ //lent mégegyszer van ugyan ez és az fut le valamiért
+        _serialPort.Open();
+    }
 
     private void SerialPortOnDataReceived(object sender, SerialDataReceivedEventArgs serialDataReceivedEventArgs)
     {
@@ -126,7 +128,11 @@ public class SerialConnection : ISerialConnection
 
     public static IEnumerable<string> GetAvailablePorts() => SerialPort.GetPortNames();
 
-    public void Connect() => _serialPort.Open();
+    public void Connect(){
+        _serialPort.Dispose(); //didnt help
+        _serialPort.Open();
+    } 
+        
 
     private void SerialPortOnDataReceived(object sender, SerialDataReceivedEventArgs serialDataReceivedEventArgs)
     {

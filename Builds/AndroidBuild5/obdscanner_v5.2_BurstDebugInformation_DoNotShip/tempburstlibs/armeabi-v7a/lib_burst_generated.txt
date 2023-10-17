@@ -52,6 +52,7 @@ Library: C:\Users\Szabolcs\Documents\unity projects\OBDII Scanner\Temp\BurstOutp
 --assembly-defines=mscorlib;
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Users\Szabolcs\Documents\unity projects\OBDII Scanner\Temp\Burst
+--debug=Full
 --key-folder=C:/Program Files/Unity Hub/Editor Install Folder/2022.3.10f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Users\Szabolcs\Documents\unity projects\OBDII Scanner\Library\Burst
 --output=C:\Users\Szabolcs\Documents\unity projects\OBDII Scanner\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
