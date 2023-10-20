@@ -29,7 +29,7 @@ public abstract class SerialDevice : IDisposable
 
     protected QueuedCommand? CurrentCommand;
     protected MyLogger? Logger { get; }
-    protected ISerialConnection Connection { get; }
+    public ISerialConnection Connection { get; }
     protected char Terminator { get; set; }
 
     #endregion
