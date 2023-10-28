@@ -14,10 +14,17 @@ using System.IO.Ports;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine.Android;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class ScannerScript : MonoBehaviour
 {
-    IEnumerator JustKeepTrying(string comPort, MyLogger logger){
+    List<string> logQueue = new ();
+    void JustKeepTrying(object data){
+        Tuple<string, MyLogger> parameters = (Tuple<string, MyLogger>)data;
+        string comPort = parameters.Item1;
+        MyLogger logger = parameters.Item2;
 
         using SerialConnection connection = new (comPort);
         using ELM327 dev = new(connection, logger);
@@ -26,19 +33,18 @@ public class ScannerScript : MonoBehaviour
         dev.SubscribeDataReceived<VehicleSpeed>((_, data) => logger.WriteLine("VehicleSpeed: " + data.Data));
         dev.SubscribeDataReceived<IOBDData>((_, data) => logger.WriteLine($"PID {data.Data.PID.ToHexString()}: {data.Data}"));
 
-        logger.WriteLine("Attempting connection on COM port "+comPort);
+        logQueue.Add("Thread started for connection to port "+comPort);
         dev.Initialize();
 
         var wait = new WaitForSeconds(5);
 
         if(!dev.Connection.IsOpen){
-            logger.WriteLine("Failed to connect on COM port "+comPort);
+            logQueue.Add("Failed to connect on port "+comPort);
             dev.Connection.Dispose();
         }
         else{
-            logger.WriteLine("Successful connection on COM port "+comPort);
+            logQueue.Add("Successful connection on port "+comPort);
         }
-        return null;
     }
     public string comPort;
 
@@ -57,6 +63,16 @@ public class ScannerScript : MonoBehaviour
 
     internal void PermissionCallbacks_PermissionDenied(string permissionName){
         logger.WriteLine("Cannot connect without Bluetooth permissions. Restart app to be prompted again.");
+    }
+
+    void Update(){
+        int logsAm = logQueue.Count();
+        if(logsAm != 0){
+            for ( int i = 0; i < logsAm; i++){
+                logger.WriteLine("Queued log: "+logQueue[0]);
+                logQueue.RemoveAt(0);
+            }
+        }
     }
 
     void Start(){
@@ -90,12 +106,24 @@ public class ScannerScript : MonoBehaviour
     }
     private void ConnectToScanner()
     {
-        logger.WriteLine( "Attempting connection on all available ports." );
-        IEnumerable<string> availablePorts = SerialConnection.GetAvailablePorts();
-        foreach (string port in availablePorts){
-            StartCoroutine(JustKeepTrying(port,logger));
+        List<string> availablePorts = SerialConnection.GetAvailablePorts().ToList();
+        int portsAm = availablePorts.Count();
+        logger.WriteLine( $"Attempting connection on {portsAm} available ports." );
+
+        Thread[] threads = new Thread[portsAm];
+        for (int i = 0; i < portsAm; i++){
+            logger.WriteLine("Attempting connection to port "+availablePorts[i]);
+            Thread thread = new Thread(() => JustKeepTrying(new Tuple<string, MyLogger>(availablePorts[i], logger)));
+            thread.Start();
+            threads[i] = thread;
         }
-        //StartCoroutine(JustKeepTrying("COM6",logger));
-        logger.WriteLine("All connection attempts terminated.");
+        foreach (Thread thread in threads){
+            thread.Join();
+        }
+        logger.WriteLine("Done.");
+
+        // Thread thread = new Thread(() => JustKeepTrying(new Tuple<string, MyLogger>("COM6", logger)));
+        // thread.Start();
+        // thread.Join();
     }
 }
